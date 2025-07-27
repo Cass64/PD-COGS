@@ -39,6 +39,9 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 import matplotlib.ticker as ticker
 import numpy as np
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Importation des fonctions utilitaires
 from utils import (
@@ -52,8 +55,8 @@ from utils import (
     user_cooldown, sniped_messages, stats_collection33
 )
 
-token = os.environ['ETHERYA']
-VERIFICATION_CODE = os.environ['VERIFICATION_CODE']
+token = os.getenv('ETHERYA')
+VERIFICATION_CODE = os.getenv('VERIFICATION_CODE')
 intents = discord.Intents.all()
 start_time = time.time()
 # client = discord.Client(intents=intents) # Remplacé par commands.Bot
